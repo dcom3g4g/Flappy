@@ -18,7 +18,7 @@ public class Bird : MonoBehaviour
         if(index==1)
         {
             m_animator.SetBool("Check", true);
-            Debug.Log("xxxxxxx"); 
+            
         }
     }
     public void StartGame()
