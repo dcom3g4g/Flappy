@@ -20,8 +20,7 @@ public class score2 : MonoBehaviour
     {
         if (!collision.gameObject.name.Contains("Bird") && !collision.gameObject.name.Contains("PipeHolder") && !collision.gameObject.name.Contains("Exp"))
         {
-            Debug.Log("+1");
-            Debug.Log(collision.gameObject.name);
+            
             m_gameControl.Currscore++;
 
             m_score.text = m_gameControl.Currscore.ToString();

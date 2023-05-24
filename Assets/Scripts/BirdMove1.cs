@@ -10,11 +10,7 @@ public class BirdMove1 : MonoBehaviour
     [SerializeField] private GameConfiguration m_gameconfiguration; 
     [SerializeField] private AudioSource m_fly;
     [SerializeField] private BirdInput m_input;
-    [SerializeField] private float m_RotateUp=-5f ; 
-    [SerializeField] private float m_RotateDown = 1f;
-    [SerializeField] private float m_timereset = 0.2f; 
-    private bool m_Rotate = false  ;
-    private float time = 0; 
+    
     // Start is called before the first frame update
 
     private void Start()
@@ -26,11 +22,13 @@ public class BirdMove1 : MonoBehaviour
     {
         m_input.OnClickMouse.RemoveListener(Jump);
     }
+
     public void Force()
     {
-        m_rigid.AddForce(new Vector2(0, 800));
+        m_rigid.AddForce(m_gameconfiguration.m_force);
         m_rigid.gravityScale = 3f;
     }
+
     public void Jump()
     {
         if (m_start)
@@ -38,11 +36,11 @@ public class BirdMove1 : MonoBehaviour
 
             if (m_rigid != null)
             {
-                m_rigid.gravityScale = 3f;
+                m_rigid.gravityScale = m_gameconfiguration.m_gravity;
                 m_fly.Play();
                 //transform.Translate(new Vector2(0,0.7f)); 
-                m_rigid.AddForce(new Vector2(0, 800));
-                m_Rotate = true; 
+                m_rigid.AddForce(m_gameconfiguration.m_force);
+                m_gameconfiguration.m_Rotate = true; 
             }
         }
         else
@@ -53,10 +51,10 @@ public class BirdMove1 : MonoBehaviour
 
     private void Update()
     {
-        if (m_rigid.velocity.y > 7.2f)
+        if (m_rigid.velocity.y > m_gameconfiguration.m_maxvelo)
         {
             m_rigid.velocity = m_gameconfiguration.m_velomax;
-            Debug.Log(">2");
+
             
             
         }
@@ -64,25 +62,25 @@ public class BirdMove1 : MonoBehaviour
         //    transform.Rotate(m_gameconfiguration.m_rotate, 0.1f);
         if (m_start)
         {
-            if (m_Rotate)
+            if (m_gameconfiguration.m_Rotate)
             {
-                time += Time.deltaTime; 
-                transform.Rotate(m_gameconfiguration.m_rotate, m_RotateUp);
-                Debug.Log(transform.rotation.z);
-                if (transform.rotation.z > 0.25)
+                m_gameconfiguration.time += Time.deltaTime; 
+                transform.Rotate(m_gameconfiguration.m_rotate, m_gameconfiguration.m_RotateUp);
+                
+                if (transform.rotation.z > m_gameconfiguration.m_maxRotationZ)
                 {
-                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 25f));
-                    Debug.Log(">30");
+                    transform.rotation = Quaternion.Euler(m_gameconfiguration.m_rotation);
+                    
                 }
-                if (time>m_timereset)
+                if (m_gameconfiguration.time > m_gameconfiguration.m_timereset)
                 {
-                    time = 0;
-                    m_Rotate = false; 
+                    m_gameconfiguration.time = 0;
+                    m_gameconfiguration.m_Rotate = false; 
                 }
             }
             
             else
-                transform.Rotate(m_gameconfiguration.m_rotate, m_RotateDown);
+                transform.Rotate(m_gameconfiguration.m_rotate, m_gameconfiguration.m_RotateDown);
         }
         
 
@@ -95,16 +93,20 @@ public class BirdMove1 : MonoBehaviour
         
         
     }
+
     public void RotateaAgian()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
     }
+
     public void StartMove()
     {
 
         m_rigid.velocity = m_gameconfiguration.m_velodown;
         m_start = true;
+        m_gameconfiguration.m_Rotate = false; 
     }
+
     public void StopMove()
     {
         m_start = false;

@@ -8,7 +8,7 @@ public class ChangeSence : MonoBehaviour
     [SerializeField] Color m_startColor;
     [SerializeField] Color m_endColor;
     [SerializeField] float m_fadeInTime=1f;
-    [SerializeField] float m_fadeOutTime = 1f;
+
     [SerializeField] float m_fadeDelay = 1f;
     [SerializeField] SpriteRenderer m_render;
     private float m_startPoint = 0.01f;

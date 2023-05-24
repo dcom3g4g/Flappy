@@ -17,3 +17,26 @@ MonoBehaviour:
   m_topPile: TopPipe
   m_ground: Ground
   m_moveLeft: {x: 0.5, y: 0, z: 0}
+  m_velodown: {x: 0, y: -3}
+  m_velostop: {x: 0, y: 0}
+  m_velodie: {x: 0, y: -20}
+  m_velomax: {x: 0, y: 7.2}
+  m_rotate: {x: 0, y: 0, z: -1}
+  m_angle: 90
+  m_maxRotation: 30
+  m_translate: {x: 0, y: 1}
+  m_isPre: 1
+  m_count: 70
+  m_countMin: 50
+  m_countMax: 100
+  m_vectorMove: {x: 0, y: 0.0025, z: 0}
+  m_RotateUp: -4
+  m_RotateDown: 0.8
+  m_timereset: 0.15
+  m_force: {x: 0, y: 800}
+  m_Rotate: 0
+  time: 0
+  m_gravity: 3
+  m_maxRotationZ: 0.25
+  m_rotation: {x: 0, y: 0, z: 25}
+  m_maxvelo: 7.2
