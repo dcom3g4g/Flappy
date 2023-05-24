@@ -23,11 +23,11 @@ public class PipeMove : MonoBehaviour
             
             if (m_start)
             {
-                m_myRigi.velocity = m_moveAndScroll.m_veloMove;
+                transform.Translate(Vector3.left * 2f * Time.deltaTime);
             }
             else
             {
-                m_myRigi.velocity = m_moveAndScroll.m_veloStop;
+                //m_myRigi.velocity = m_moveAndScroll.m_veloStop;
             }
             
         }

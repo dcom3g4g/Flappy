@@ -14,5 +14,6 @@ public class GameConfiguration : ScriptableObject
     public Vector2 m_velomax = new Vector2(0, 7.2f);
     public Vector3 m_rotate = new Vector3(0, 0, -1);
     public float m_angle = 90;
+    public float m_maxRotation = 30; 
     public Vector2 m_translate = new Vector2(0, 1);
 }

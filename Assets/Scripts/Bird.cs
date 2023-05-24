@@ -18,7 +18,7 @@ public class Bird : MonoBehaviour
         if(index==1)
         {
             m_animator.SetBool("Check", true);
-            
+            Debug.Log("xxxxxxx"); 
         }
     }
     public void StartGame()
@@ -28,7 +28,7 @@ public class Bird : MonoBehaviour
     }
     public void MoveBack()
     {
-        m_BirdMove.Rotateaagian();
+        m_BirdMove.RotateaAgian();
         m_animator.enabled = true ;
         transform.position = m_birdConfigation.m_StartPos;
         m_BirdMove.StopMove(); 

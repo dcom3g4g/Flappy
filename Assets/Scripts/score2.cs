@@ -18,15 +18,16 @@ public class score2 : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.gameObject.name.Contains("Bird") )
+        if (!collision.gameObject.name.Contains("Bird") && !collision.gameObject.name.Contains("PipeHolder") && !collision.gameObject.name.Contains("Exp"))
         {
-            Debug.Log("+1"); 
+            Debug.Log("+1");
+            Debug.Log(collision.gameObject.name);
             m_gameControl.Currscore++;
 
             m_score.text = m_gameControl.Currscore.ToString();
             m_point.Play();
         };
-        Debug.Log(collision.gameObject.name); 
+        
 
     }
 }

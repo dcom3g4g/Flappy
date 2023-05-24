@@ -8,7 +8,9 @@ public class Spawn : MonoBehaviour
     
     [SerializeField] private bool m_start = false; 
     [SerializeField] GameObject m_Pile;
-    private Vector2 m_firstPos= new Vector2(4, 0);
+    [SerializeField] GameObject m_Pile1;
+    private Vector2 m_firstPos= new Vector2(5, 0);
+    private Vector2 m_firstPos1 = new Vector2(8, 0);
     private int m_random = 0; 
     public void StartSpawn()
     {
@@ -18,6 +20,7 @@ public class Spawn : MonoBehaviour
     public void MoveBack()
     {
         m_Pile.transform.position = m_firstPos;
+        m_Pile1.transform.position = m_firstPos1;
     }
     public void Stopspawn()
     {
@@ -34,6 +37,11 @@ public class Spawn : MonoBehaviour
             { 
                 m_random = Random.Range(-2, 2);
                 m_Pile.transform.position = new Vector2(m_firstPos.x, m_firstPos.y+m_random/2);
+            }
+            if (m_Pile1.transform.position.x < -3.5)
+            {
+                m_random = Random.Range(-2, 2);
+                m_Pile1.transform.position = new Vector2(m_firstPos.x, m_firstPos1.y + m_random / 2);
             }
         }
     }

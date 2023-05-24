@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameOverView : MonoBehaviour
 {
-    [SerializeField] Button m_play;
+    [SerializeField] UnityEngine.UI.Button m_play;
     [SerializeField] TextMeshProUGUI m_currScore;
     [SerializeField] TextMeshProUGUI m_bestscore;
     [SerializeField] Bird m_bird;

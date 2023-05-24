@@ -10,8 +10,11 @@ public class BirdMove1 : MonoBehaviour
     [SerializeField] private GameConfiguration m_gameconfiguration; 
     [SerializeField] private AudioSource m_fly;
     [SerializeField] private BirdInput m_input;
-    
-
+    [SerializeField] private float m_RotateUp=-5f ; 
+    [SerializeField] private float m_RotateDown = 1f;
+    [SerializeField] private float m_timereset = 0.2f; 
+    private bool m_Rotate = false  ;
+    private float time = 0; 
     // Start is called before the first frame update
 
     private void Start()
@@ -39,7 +42,7 @@ public class BirdMove1 : MonoBehaviour
                 m_fly.Play();
                 //transform.Translate(new Vector2(0,0.7f)); 
                 m_rigid.AddForce(new Vector2(0, 800));
-                
+                m_Rotate = true; 
             }
         }
         else
@@ -54,7 +57,35 @@ public class BirdMove1 : MonoBehaviour
         {
             m_rigid.velocity = m_gameconfiguration.m_velomax;
             Debug.Log(">2");
+            
+            
         }
+        //if( m_start)
+        //    transform.Rotate(m_gameconfiguration.m_rotate, 0.1f);
+        if (m_start)
+        {
+            if (m_Rotate)
+            {
+                time += Time.deltaTime; 
+                transform.Rotate(m_gameconfiguration.m_rotate, m_RotateUp);
+                Debug.Log(transform.rotation.z);
+                if (transform.rotation.z > 0.25)
+                {
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 0, 25f));
+                    Debug.Log(">30");
+                }
+                if (time>m_timereset)
+                {
+                    time = 0;
+                    m_Rotate = false; 
+                }
+            }
+            
+            else
+                transform.Rotate(m_gameconfiguration.m_rotate, m_RotateDown);
+        }
+        
+
     }
     public void Die()
     {
@@ -64,7 +95,7 @@ public class BirdMove1 : MonoBehaviour
         
         
     }
-    public void Rotateaagian()
+    public void RotateaAgian()
     {
         transform.rotation = Quaternion.Euler(Vector3.zero);
     }

@@ -21,17 +21,14 @@ public class Scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
         if (m_moveAndScroll.m_start)
         {
-            m_rigid.velocity = m_moveAndScroll.m_veloMove;
+            //m_rigid.velocity = m_moveAndScroll.m_veloMove;
+            transform.Translate(Vector3.left * 2f * Time.deltaTime);
         }
         else
         {
-            m_rigid.velocity = m_moveAndScroll.m_veloStop;
+            //m_rigid.velocity = m_moveAndScroll.m_veloStop;
         }
             
         if (transform.position.x < -m_moveAndScroll.m_posReset)
@@ -39,5 +36,9 @@ public class Scroll : MonoBehaviour
             transform.position -= new Vector3(transform.position.x, 0, 0);
 
         }
+    }
+    private void FixedUpdate()
+    {
+        
     }
 }
