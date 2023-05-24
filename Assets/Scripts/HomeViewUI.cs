@@ -11,6 +11,7 @@ public class HomeViewUI : MonoBehaviour
     [SerializeField] private CheckStart m_checkStart; 
     [SerializeField] private Button m_play;
     [SerializeField] private Bird m_bird;
+    [SerializeField] private GameObject m_changeSence; 
 
     //[SerializeField] List<GameObject> m_listspritehide;
 
@@ -28,7 +29,10 @@ public class HomeViewUI : MonoBehaviour
         m_bird.MoveBack(); 
         m_checkStart.Check = true; 
         m_preview.ShowUI();
-        m_homeView.SetActive(false); 
+        m_homeView.SetActive(false);
+        m_changeSence.SetActive(false);
+        m_changeSence.SetActive(true);
+        
     }
 
 

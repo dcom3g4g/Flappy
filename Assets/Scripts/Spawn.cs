@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     [SerializeField] private bool m_start = false; 
     [SerializeField] GameObject m_Pile;
     [SerializeField] GameObject m_Pile1;
-    private Vector2 m_firstPos= new Vector2(5, 0);
+    private Vector2 m_firstPos= new Vector2(4, 0);
     private Vector2 m_firstPos1 = new Vector2(8, 0);
     private int m_random = 0; 
     public void StartSpawn()

@@ -14,10 +14,12 @@ public class Scroll : MonoBehaviour
     {
         m_moveAndScroll.m_start = true; 
     }
+
     public void StopScroll()
     {
         m_moveAndScroll.m_start = false;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -33,12 +35,8 @@ public class Scroll : MonoBehaviour
             
         if (transform.position.x < -m_moveAndScroll.m_posReset)
         {
-            transform.position -= new Vector3(transform.position.x, 0, 0);
+            transform.position = new Vector3(1, -5.1f, 0);
 
         }
-    }
-    private void FixedUpdate()
-    {
-        
     }
 }

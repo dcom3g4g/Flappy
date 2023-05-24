@@ -45,19 +45,30 @@ public class Bird : MonoBehaviour
         m_swoosh.Play();
         m_animator.enabled = false; 
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.gameObject.name.Contains(m_birdConfigation.m_botPile)  || collision.gameObject.name.Contains(m_birdConfigation.m_topPile) || collision.gameObject.name.Contains(m_birdConfigation.m_ground) )
+        if (collision.gameObject.name.Contains(m_birdConfigation.m_botPile) || collision.gameObject.name.Contains(m_birdConfigation.m_topPile) || collision.gameObject.name.Contains(m_birdConfigation.m_ground))
         {
-            
+
             m_hit.Play();
             Die();
             m_gamecontrol.GameOver();
-            transform.position -= m_birdConfigation.m_moveLeft;
-             
+            //transform.position -= m_birdConfigation.m_moveLeft;
+
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains(m_birdConfigation.m_botPile) || collision.gameObject.name.Contains(m_birdConfigation.m_topPile) || collision.gameObject.name.Contains(m_birdConfigation.m_ground))
+        {
+
+            m_hit.Play();
+            Die();
+            m_gamecontrol.GameOver();
+            //transform.position -= m_birdConfigation.m_moveLeft;
+
+        }
+
     }
 }
  

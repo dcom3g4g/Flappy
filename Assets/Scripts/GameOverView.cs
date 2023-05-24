@@ -15,7 +15,8 @@ public class GameOverView : MonoBehaviour
     [SerializeField] GameObject m_brozenmedal;
     [SerializeField] GameObject m_slivermedal;
     [SerializeField] GameObject m_gameOverView;
-    [SerializeField] GameController m_gameController; 
+    [SerializeField] GameController m_gameController;
+    //[SerializeField] GameObject m_blackSence; 
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +53,7 @@ public class GameOverView : MonoBehaviour
         HideUI();
         m_gameController.ReplayGame(); 
         m_bird.MoveBack();
-        
+        //m_blackSence.SetActive(true); 
     }
     
 }
