@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3f8887061d104661a6aa3f9451c4914, type: 3}
   m_Name: MoveAndScrollConfiguration
   m_EditorClassIdentifier: 
-  m_posReset: 2.318
+  m_posReset: 2.38
   m_veloMove: {x: -3, y: 0}
   m_veloStop: {x: 0, y: 0}
-  m_start: 1
+  m_start: 0
   m_bird: Bird

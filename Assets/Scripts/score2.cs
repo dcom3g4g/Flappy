@@ -8,7 +8,7 @@ public class score2 : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] TextMeshProUGUI m_score;
-    [SerializeField] AudioSource m_point;
+    [SerializeField] AudioController m_audio;
     [SerializeField] GameController m_gameControl;
     private const string m_botPile = "BotPile"; 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class score2 : MonoBehaviour
             m_gameControl.Currscore++;
 
             m_score.text = m_gameControl.Currscore.ToString();
-            m_point.Play();
+            m_audio.Point(); 
         };
         
 

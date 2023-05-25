@@ -163,7 +163,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -603,7 +603,7 @@ SpriteRenderer:
   m_SortingLayerID: -677154973
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: be61d90681c6b4c3eafccd842c4f9881, type: 3}
+  m_Sprite: {fileID: 1332014737, guid: 59d34a8d741e94e0d963db763d83c461, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -623,7 +623,7 @@ Transform:
   m_GameObject: {fileID: 351163518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.53, y: 0.26, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1660,26 +1660,21 @@ MonoBehaviour:
   m_birdsprite: {fileID: 687469913}
   m_birdorange: {fileID: 166941031, guid: 59d34a8d741e94e0d963db763d83c461, type: 3}
   m_birdblue: {fileID: 1899180312, guid: 59d34a8d741e94e0d963db763d83c461, type: 3}
---- !u!224 &652763845
-RectTransform:
+--- !u!4 &652763845
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652763843}
-  m_LocalRotation: {x: -0.17041707, y: -0, z: -0, w: 0.98537207}
-  m_LocalPosition: {x: 0, y: 0, z: 91.03667}
-  m_LocalScale: {x: 0.012958333, y: 0.012958332, z: 0.012958332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 108.5, y: -57.06792}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &687469911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,12 +1685,12 @@ GameObject:
   m_Component:
   - component: {fileID: 687469914}
   - component: {fileID: 687469913}
-  - component: {fileID: 687469917}
   - component: {fileID: 687469919}
   - component: {fileID: 687469920}
   - component: {fileID: 687469921}
   - component: {fileID: 687469922}
   - component: {fileID: 687469923}
+  - component: {fileID: 687469924}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -1770,32 +1765,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &687469917
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687469911}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.34, y: 0.24}
-    newSize: {x: 0.34, y: 0.24}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17, y: 0.12}
-  m_EdgeRadius: 0
 --- !u!114 &687469919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,8 +1780,8 @@ MonoBehaviour:
   m_start: 0
   m_rigid: {fileID: 687469920}
   m_gameconfiguration: {fileID: 11400000, guid: 1ae501caa68a14a2c8e35c8c6105caa4, type: 2}
-  m_fly: {fileID: 820050677}
   m_input: {fileID: 687469921}
+  m_audio: {fileID: 1249417624}
 --- !u!50 &687469920
 Rigidbody2D:
   serializedVersion: 4
@@ -1875,9 +1844,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gamecontrol: {fileID: 652763844}
   m_BirdMove: {fileID: 687469919}
-  m_hit: {fileID: 229226935}
   m_rigi: {fileID: 687469920}
-  m_swoosh: {fileID: 1393490112}
+  m_audio: {fileID: 1249417624}
   m_birdConfigation: {fileID: 11400000, guid: 1ae501caa68a14a2c8e35c8c6105caa4, type: 2}
   m_animator: {fileID: 687469923}
   m_splash: {fileID: 351163518}
@@ -1903,6 +1871,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &687469924
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687469911}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0028010309, y: -0.019607216}
+  serializedVersion: 2
+  m_Radius: 0.15319382
 --- !u!1 &744183547
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,6 +3073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249417623}
+  - component: {fileID: 1249417624}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -3115,6 +3100,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249417624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249417622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50493e4d69434a889f9a7df59769a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_hit: {fileID: 229226935}
+  m_fly: {fileID: 820050677}
+  m_point: {fileID: 1941682474}
+  m_swoosh: {fileID: 1393490112}
 --- !u!1 &1295266758
 GameObject:
   m_ObjectHideFlags: 0
@@ -3167,7 +3168,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3335,7 +3336,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4058,7 +4059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_score: {fileID: 527603998}
-  m_point: {fileID: 1941682474}
+  m_audio: {fileID: 1249417624}
   m_gameControl: {fileID: 652763844}
 --- !u!1 &1724466336
 GameObject:
@@ -4119,7 +4120,7 @@ SpriteRenderer:
   m_SortingLayerID: -677154973
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 46a16a0c54274411fbb5955539640bdd, type: 3}
+  m_Sprite: {fileID: 1066780687, guid: 59d34a8d741e94e0d963db763d83c461, type: 3}
   m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4139,7 +4140,7 @@ Transform:
   m_GameObject: {fileID: 1724466336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.53, y: 0.26, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 40, y: 40, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -7,9 +7,8 @@ public class Bird : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameController m_gamecontrol; 
     [SerializeField] private BirdMove1 m_BirdMove;
-    [SerializeField] private AudioSource m_hit;
-    [SerializeField] private Rigidbody2D m_rigi; 
-    [SerializeField] private AudioSource m_swoosh;
+    [SerializeField] private Rigidbody2D m_rigi;
+    [SerializeField] private AudioController m_audio; 
     [SerializeField] private GameConfiguration m_birdConfigation; 
     [SerializeField] private Animator m_animator;
     [SerializeField] private GameObject m_splash;
@@ -45,7 +44,7 @@ public class Bird : MonoBehaviour
     public void Die()
     {
         m_BirdMove.Die();
-        m_swoosh.Play();
+        m_audio.Swoosh(); 
         m_animator.enabled = false; 
     }
     
@@ -56,7 +55,7 @@ public class Bird : MonoBehaviour
         {
             m_splash.SetActive(false);
             m_splash.SetActive(true);
-            m_hit.Play();
+            m_audio.Hit(); 
             Die();
             m_gamecontrol.GameOver();
 

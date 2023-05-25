@@ -8,9 +8,8 @@ public class BirdMove1 : MonoBehaviour
     [SerializeField] private bool m_start = false;
     [SerializeField] private Rigidbody2D m_rigid;
     [SerializeField] private GameConfiguration m_gameconfiguration; 
-    [SerializeField] private AudioSource m_fly;
     [SerializeField] private BirdInput m_input;
-    
+    [SerializeField] private AudioController m_audio; 
     // Start is called before the first frame update
 
     private void Start()
@@ -37,7 +36,7 @@ public class BirdMove1 : MonoBehaviour
             if (m_rigid != null)
             {
                 m_rigid.gravityScale = m_gameconfiguration.m_gravity;
-                m_fly.Play();
+                m_audio.Fly(); 
                 //transform.Translate(new Vector2(0,0.7f)); 
                 m_rigid.AddForce(m_gameconfiguration.m_force);
                 m_gameconfiguration.m_Rotate = true; 
@@ -104,7 +103,8 @@ public class BirdMove1 : MonoBehaviour
 
         m_rigid.velocity = m_gameconfiguration.m_velodown;
         m_start = true;
-        m_gameconfiguration.m_Rotate = false; 
+        m_gameconfiguration.m_Rotate = true;
+        
     }
 
     public void StopMove()
